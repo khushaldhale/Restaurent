@@ -35,6 +35,9 @@ const authRoutes = require("./routes/authRoutes");
 app.use("/api/v1/auth", authRoutes);
 
 
+const categoryRoutes = require("./routes/categoryRoutes");
+app.use("/api/v1/categories", categoryRoutes);
+
 
 const PORT = process.env.PORT || 4001
 
