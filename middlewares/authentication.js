@@ -53,6 +53,7 @@ exports.isAdmin = async (req, res, next) => {
 					message: "This is a protected route for admin only "
 				})
 		}
+		return next();
 
 	}
 	catch (error) {
@@ -80,6 +81,8 @@ exports.isWaiter = async (req, res, next) => {
 				})
 		}
 
+		return next();
+
 	}
 	catch (error) {
 		console.log("error occured while authentication : ", error);
@@ -105,6 +108,8 @@ exports.isCook = async (req, res, next) => {
 					message: "This is a protected route for cook only "
 				})
 		}
+		return next();
+
 
 	}
 	catch (error) {
@@ -133,7 +138,10 @@ exports.isUser = async (req, res, next) => {
 				})
 		}
 
+		return next();
+
 	}
+
 	catch (error) {
 		console.log("error occured while authentication : ", error);
 		return res.status(500)
