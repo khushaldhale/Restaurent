@@ -39,6 +39,11 @@ const categoryRoutes = require("./routes/categoryRoutes");
 app.use("/api/v1/categories", categoryRoutes);
 
 
+const menuRoutes = require("./routes/menuRoutes");
+//  this common url shoudl not consist dynamic parameters
+app.use("/api/v1/categories", menuRoutes);
+
+
 const PORT = process.env.PORT || 4001
 
 const server = app.listen(PORT, () => {

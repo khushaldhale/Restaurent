@@ -9,6 +9,8 @@ exports.createCategory = async (req, res, next) => {
 		const { category_name, category_desc } = req.body;
 		const user_id = req.decode._id;
 
+		console.log(category_name, category_desc, user_id)
+
 		if (!category_name || !category_desc) {
 			return res.status(400)
 				.json({
