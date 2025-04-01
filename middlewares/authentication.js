@@ -130,6 +130,7 @@ exports.isCook = async (req, res, next) => {
 exports.isUser = async (req, res, next) => {
 	try {
 
+		console.log(req.decode.accountType)
 		if (req.decode.accountType !== "user") {
 			return res.status(403)
 				.json({

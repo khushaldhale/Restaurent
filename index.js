@@ -44,6 +44,9 @@ const menuRoutes = require("./routes/menuRoutes");
 app.use("/api/v1/categories", menuRoutes);
 
 
+const bucketRoutes = require("./routes/bucket");
+app.use("/api/v1/buckets", bucketRoutes);
+
 const PORT = process.env.PORT || 4001
 
 const server = app.listen(PORT, () => {
