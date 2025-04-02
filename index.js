@@ -6,14 +6,12 @@ const fileUpload = require("express-fileupload");
 const cookies = require("cookie-parser")
 
 
-
 app.use(express.json());
 app.use(fileUpload({
 	tempFileDir: "/temp/",
 	useTempFiles: true
 }))
 app.use(cookies())
-
 
 
 app.get("/", (req, res) => {
@@ -44,8 +42,19 @@ const menuRoutes = require("./routes/menuRoutes");
 app.use("/api/v1/categories", menuRoutes);
 
 
-const bucketRoutes = require("./routes/bucket");
+const bucketRoutes = require("./routes/bucketRoutes");
 app.use("/api/v1/buckets", bucketRoutes);
+
+
+const employeeRoutes = require("./routes/employeeRoutes");
+app.use("/api/v1/employee", employeeRoutes);
+
+
+const orderRoutes = require("./routes/orderRoutes");
+app.use("/api/v1/order", orderRoutes);
+
+//work over the revenue , per day,per month
+
 
 const PORT = process.env.PORT || 4001
 
